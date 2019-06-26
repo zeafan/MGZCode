@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+        <string name="app_name">الأمين لجرد المستودعات</string>
+        <string name="action_new">جديد</string>
+        <string name="action_settings">الإعدادات</string>
+        <string name="cancel">إلغاء الأمر</string>
+        <string name="confirm">تأكيد</string>
+        <string name="history">الجردات السابقة</string>
+        <string name="importing_xml_confirmation">هل انت متاكد من استيراد الملف؟</string>
+        <string name="delete_products_confirmation">هل أنت متأكد من حذف جميع المواد؟</string>
+        <string name="current_inventory">الجردة الحالية</string>
+        <string name="inventory">الجرد</string>
+        <string name="no">لا</string>
+        <string name="ok">موافق</string>
+        <string name="not_such_an_ameen_file">الملف ليس ملف أمين!</string>
+        <string name="yes">نعم</string>
+
+        <string name="import_from_file">استيراد من ملف</string>
+        <string name="delete_products">حذف المواد</string>
+        <string name="import_products_over_wifi">استيراد المواد عبر واي فاي</string>
+        <string name="importing_dialog_message">استيراد المواد, يرجى الانتظار...</string>
+        <string name="imported_products_count">عدد المواد المستوردة: </string>
+        <string name="ignored_products_count">عدد المواد غير المستوردة: </string>
+        <string name="no_products_imported">لم يتم استيراد المواد!</string>
+        <string name="no_qr_code_or_Barcode_specified">لم يتم تحديد باركود لها</string>
+        <string name="new_inventory_created">تم إنشاء جردة جديدة</string>
+        <string name="set_title_and_date">حدد اسم وتاريخ الجردة</string>
+        <string name="set_product_name">حدد اسم المادة</string>
+        <string name="set_file_name">حدد اسم الملف</string>
+        <string name="stock_taking_duplicated">الجردة مكررة! حدد اسم أو تاريخ مختلف</string>
+        <string name="not_imported_products">المواد الغير مستوردة</string>
+        <string name="imported_products">المواد المستوردة</string>
+        <string name="back">عودة</string>
+        <string name="exit_application_confirmation">هل أنت متاكد من أنك تريد الخروج؟</string>
+        <string name="new_stock_taking">جردة جديدة</string>
+        <string name="set_quantity">حدد الكمية</string>
+        <string name="stocks">الجردات</string>
+        <string name="products">المواد</string>
+        <string name="exit">خروج</string>
+        <string name="title">اسم الجردة</string>
+        <string name="date">التاريخ</string>
+        <string name="title_activity_products">المواد</string>
+        <string name="title_activity_settings">الإعدادات</string>
+        <string name="title_activity_stock_taking">عملية جرد</string>
+        <string name="title_activity_stocks_list">الجردات</string>
+        <string name="title_activity_item_stock_quantities">قراءات مادة</string>
+        <string name="type_barcode_here">أكتب الباركود...</string>
+        <string name="quantity">الكمية</string>
+        <string name="total">الإجمالي</string>
+        <string name="sum">المجموع</string>
+        <string name="time">التوقيت</string>
+        <string name="unit1">وحدة أولى</string>
+        <string name="unit2">وحدة ثانية</string>
+        <string name="unit3">وحدة ثالثة</string>
+        <string name="choose_action">اختر الاجراء</string>
+        <string name="modify">تعديل</string>
+        <string name="delete">حذف</string>
+        <string name="export_to_file">تصدير إلى ملف</string>
+        <string name="export_to_file_success">تم التصدير بنجاح</string>
+        <string name="export_to_file_failed">فشل التصدير!</string>
+        <string name="empty_stock">الجردة لا تحوي مواد!</string>
+        <string name="confirmation">تأكيد</string>
+        <string name="general_confirmation_question">هل أنت متأكد؟</string>
+        <string name="delete_confirmation">هل أنت متاكد من الحذف؟</string>
+        <string name="delete_toast_message">تم حذف المواد غير المستخدمة في جرد</string>
+        <string name="last_item_delete_confirmation">سيتم حذف المادة من الجردة في حال حذف جميع القراءات\n</string>
+        <string name="export_confirmation">هل أنت متأكد من تصدير هذه الجردة؟</string>
+        <string name="replace_file_confirmation">الملف موجود سابقاً هل تريد استبداله؟</string>
+        <string name="write_product_name_here">أكتب اسم المادة هنا...</string>
+        <string name="file_path">تم حفظ المواد غير المستوردة ضمن ملف على المسار التالي: </string>
+        <string name="unknown_products">مواد غير معرفة</string>
+        <string name="report">تقرير</string>
+        <string name="info">معلومات</string>
+        <string name="error">خطأ</string>
+        <string name="warning">تحذير</string>
+        <string name="no_space">لا تتوفر المساحة التخزينية الكافية!</string>
+        <string name="this_will_delete">سيتم حذف الجردة</string>
+        <string name="because_you_exceeded_the_max_stock_taking_count">بسبب تجاوز الحد الأعظمي لعدد الجردات المحفوظة والبالغ</string>
+        <string name="continue_confirmation">هل تريد المتابعة؟</string>
+        <string name="btn_new_stoc_ktaking_tooltip">اضغط هنا لإنشاء جردة جديدة</string>
+        <string name="btn_products_tooltip">اضغط هنا لاستيراد المواد</string>
+        <string name="btn_stocks_tooltip">اضغط هنا لعرض الجردات المحفوظة</string>
+        <string name="fab_scan_tooltip">اضغط هنا للمسح</string>
+        <string name="btn_get_products_from_file_tooltip">اضغط هنا لاستيرد المواد من ملف</string>
+        <string name="lv_stock_items_tooltip">اضغط على المادة لفتحها أو ضغطة طويلة لحذفها</string>
+        <string name="listView_tooltip">حدد المادة لتعديلها</string>
+        <string name="lv_stocks_tooltip">اضغط على الجردة لفتحها أو ضغطة طويلة لحذفها أو تصديرها</string>
+
+        <!-- Strings related to Settings -->
+        <string name="format">التنسيقات</string>
+
+        <string name="date_format">تنسيق التاريخ</string>
+        <string-array name="date_format_keys">
+            <item>سرياني</item>
+            <item>لاتيني</item>
+            <item>هجري</item>
+        </string-array>
+
+        <string name="numbers_format">تنسيق الأرقام</string>
+        <string-array name="numbers_format_keys">
+            <item>عربي</item>
+            <item>هندي</item>
+        </string-array>
+
+        <string name="detailed_windows">نافذة الكمية التفصيلية</string>
+        <string name="quantity_dialog">نافذة الكمية</string>
+        <string name="none">بدون إظهار نافذة الكمية</string>
+
+        <string name="scanning">المسح</string>
+        <string name="scan_method">طريقة إدخال الجرد</string>
+        <string-array name="scan_method_keys">
+            <item>نافذة الكمية التفصيلية</item>
+            <item>نافذة الكمية</item>
+            <item>بدون إظهار نافذة الكمية</item>
+        </string-array>
+
+        <string name="saving_options">خيارات الحفظ</string>
+        <string name="saved_stocks_count">عدد الجردات المحفوظة</string>
+        <string name="saved_stocks_count_summary">استخدم القيمة 0 لعدد غير محدد</string>
+        <string name="there_are">هنالك</string>
+        <string name="stock_taking">جردة</string>
+        <string name="stock_taking_will_be_deleted">جردة سيتم حذفها</string>
+        <string name="unknown">"غير معرفة: "</string>
+        <string name="rescan">عدم الخروج بعد القراءة</string>
+        <string name="rescan_summary">هذا الأمر يلغي الحاجة لتشغيل الماسح كل مرة</string>
+        <string name="discard_changes_confirmation">هل تريد تجاهل التعديلات؟</string>
+        <string name="display_options">خيارات العرض</string>
+        <string name="start_sync_data">إبدأ مزامنة البيانات...</string>
+        <string name="sync">مزامنة</string>
+        <string name="Sync_caution">تحذير: عملية المزامنة قد تستغرق وقت طويل, وهذا يعتمد على حجم البيانات وعلى سرعة الاتصال... يرجى الانتظار</string>
+        <string name="local_ip">عنوان محلي</string>
+        <string name="static_ip">عنوان خارجي</string>
+        <string name="confirmation_messages">الرسائل والتحذيرات</string>
+        <string name="products_count">"عدد المواد: "</string>
+        <string name="groups_count">"عدد المجموعات: "</string>
+        <string name="exp1">جردة محفوظة حالياً وسيتم حذف أقدم</string>
+        <string name="error_application_folder_not_exists">خطأ: مجلد البرنامج غير موجود!</string>
+        <string-array name="confirmation_messages_keys">
+            <item>تأكيد تعديل جرد مادة</item>
+            <item>تأكيد تصدير جردة</item>
+            <item>تأكيد حذف عملية مسح مادة</item>
+            <item>تأكيد حذف جرد مادة</item>
+            <item>تأكيد حذف جردة</item>
+        </string-array>
+        <string name="decimal_places_count">عدد الخانات العشرية</string>
+        <string name="show_zero_value">إظهار القيمة الصفرية</string>
+        <string name="choose_product">اختر المادة</string>
+        <string name="default_exported_files_path">مسار الملفات المصدرة الافتراضي</string>
+        <string name="exported">(مصدرة)</string>
+        <string name="use_bold_font_style">استخدام نمط الخط العريض</string>
+        <string name="about_desc">SyrianSoft Company was established in 1992. It started distributing Al-Ameen Accounting System commercially in 1994 and is constantly working on developing the program up till now.</string>
+        <string name="no_file">لا يوجد ملفات</string>
+    <string name="setting">الأعدادات</string>
+    <string name="import_file">Import Excel File (.XLS)</string>
+    <string name="on_file">لا توجد ملفات </string>
+    <string name="select_file">Select File</string>
+    <string name="problem">There  Problem in Scan</string>
+    <string name="close">غلق</string>
+    <string name="title_name">الريان</string>
+    <string name="select_sheet" > اختر الورقة</string>
+</resources>

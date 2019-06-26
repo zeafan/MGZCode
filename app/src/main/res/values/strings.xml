@@ -1,3 +1,193 @@
-<resources>
-    <string name="app_name">MGZ Code</string>
-</resources>
+    <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+        <string name="app_name">Al-ameen Stock-taking</string>
+        <string name="action_settings">Settings</string>
+        <string name="action_about" translatable="false">About</string>
+        <string name="action_new">New</string>
+        <string name="current_inventory">Current Inventory</string>
+        <string name="inventory">Inventory</string>
+        <string name="history">History</string>
+        <string name="cancel">Cancel</string>
+        <string name="ok">OK</string>
+        <string name="yes">Yes</string>
+        <string name="no">No</string>
+        <string name="confirm">Confirm</string>
+        <string name="importing_xml_confirmation">Are you sure you want to import this file?</string>
+        <string name="delete_products_confirmation">Are you sure you want to delete all products?</string>
+        <string name="not_such_an_ameen_file">Not such an Ameen file!</string>
+        <string name="import_from_file">Import From File</string>
+        <string name="delete_products">Delete Products</string>
+        <string name="import_products_over_wifi">Import products over Wi-Fi</string>
+        <string name="importing_dialog_message">Importing products, please wait...</string>
+        <string name="imported_products_count">Imported products count: </string>
+        <string name="ignored_products_count">Ignored products count: </string>
+        <string name="no_products_imported">No products imported!</string>
+        <string name="no_qr_code_or_Barcode_specified">No QR Code or Barcode specified</string>
+        <string name="new_inventory_created">New inventory created</string>
+        <string name="set_title_and_date">Set title and date</string>
+        <string name="set_product_name">Set Product Name</string>
+        <string name="set_file_name">Set File Name</string>
+        <string name="stock_taking_duplicated">Stock-taking is duplicated! Set different Title or Date</string>
+        <string name="not_imported_products">Not Impported Products</string>
+        <string name="imported_products">Imported Products</string>
+        <string name="back">Back</string>
+        <string name="exit_application_confirmation">Are you sure you want to exit?</string>
+        <string name="new_stock_taking">New Stock-Taking</string>
+        <string name="set_quantity">Set Quantity</string>
+        <string name="stocks">Stocks</string>
+        <string name="products">Products</string>
+        <string name="exit">Exit</string>
+        <string name="title">Title</string>
+        <string name="date">Date</string>
+        <string name="title_activity_products">Products</string>
+        <string name="title_activity_settings">Settings</string>
+        <string name="title_activity_stock_taking">Stock-taking</string>
+        <string name="title_activity_stocks_list">Stock-taking List</string>
+        <string name="title_activity_item_stock_quantities">Item Stock Quantities Activity</string>
+        <string name="type_barcode_here">Type scannedBarcode...</string>
+        <string name="quantity">Quantity</string>
+        <string name="total">Total</string>
+        <string name="sum">Sum</string>
+        <string name="time">Time</string>
+        <string name="unit1">Unit1</string>
+        <string name="unit2">Unit2</string>
+        <string name="unit3">Unit3</string>
+
+        <string name="choose_action">Choose action</string>
+        <string name="modify">Modify</string>
+        <string name="delete">Delete</string>
+        <string name="export_to_file">Export to file</string>
+        <string name="export_to_file_success">Export to file success</string>
+        <string name="export_to_file_failed">Export to file failed!</string>
+        <string name="empty_stock">This stock-taking has no items!</string>
+        <string name="confirmation">Confirmation</string>
+        <string name="general_confirmation_question">Are you sure?</string>
+        <string name="delete_confirmation">Are you sure you want to delete?</string>
+        <string name="delete_toast_message">All unused products are deleted</string>
+        <string name="last_item_delete_confirmation">Product stock taking will be deleted if you delete all scans items!\n</string>
+        <string name="export_confirmation">Are you sure you want to export this stock-taking operation?</string>
+        <string name="replace_file_confirmation">File exists, do you want to replace?</string>
+        <string name="write_product_name_here">Write product name here...</string>
+        <string name="file_path">Products not imported saved in a text file at: </string>
+        <string name="unknown_products">Unknown Products</string>
+        <string name="report">Report</string>
+        <string name="info">Info</string>
+        <string name="error">Error</string>
+        <string name="warning">Warning</string>
+        <string name="no_space">Required disk space not available!</string>
+        <string name="this_will_delete">This will delete</string>
+        <string name="because_you_exceeded_the_max_stock_taking_count">because you exceeded the max stock-taking count</string>
+        <string name="continue_confirmation">Do you want to continue?</string>
+
+        <string name="btn_new_stoc_ktaking_tooltip">Tap here to create a new Stock-taking operation</string>
+        <string name="btn_products_tooltip">Tap here to import products</string>
+        <string name="btn_stocks_tooltip">Tap here to view saved stock-taking</string>
+        <string name="fab_scan_tooltip">Tap here to scan</string>
+        <string name="btn_get_products_from_file_tooltip">Tap here to import products from a file</string>
+        <string name="lv_stock_items_tooltip">Tap item to open or long tap to delete</string>
+        <string name="listView_tooltip">Select item to modify</string>
+        <string name="lv_stocks_tooltip">Tap item to open or long tap to delete or export</string>
+
+        <!-- Strings related to Settings -->
+        <string name="format">Format</string>
+
+        <string name="date_format">Date Format</string>
+        <string-array name="date_format_keys">
+            <item>Syriac</item>
+            <item>Latin</item>
+            <item>Hijri</item>
+        </string-array>
+        <string-array name="date_format_values" ignore="MissingTranslation" translatable="false">
+            <item>0</item>
+            <item>1</item>
+            <item>2</item>
+        </string-array>
+
+        <string name="numbers_format">Numbers Format</string>
+        <string-array name="numbers_format_keys">
+            <item>Arabic</item>
+            <item>Hindi</item>
+        </string-array>
+        <string-array name="numbers_format_values" ignore="MissingTranslation" translatable="false">
+            <item>0</item>
+            <item>1</item>
+        </string-array>
+
+        <string name="detailed_windows">Detailed Windows</string>
+        <string name="quantity_dialog">Quantity Dialog</string>
+        <string name="none">None</string>
+
+        <string name="scanning">Scanning</string>
+        <string name="scan_method">Stock-Taking Method</string>
+        <string-array name="scan_method_keys">
+            <item>Detailed Windows</item>
+            <item>Quantity Dialog</item>
+            <item>None</item>
+        </string-array>
+        <string-array name="scan_method_values" ignore="MissingTranslation" translatable="false">
+            <item>0</item>
+            <item>1</item>
+            <item>2</item>
+        </string-array>
+
+        <string name="saving_options">Saving Options</string>
+        <string name="saved_stocks_count">Saved Stocks Count</string>
+        <string name="saved_stocks_count_summary">Use 0 for unlimited value</string>
+        <string name="there_are">There are</string>
+        <string name="stock_taking">stock-taking</string>
+        <string name="stock_taking_will_be_deleted">stock-taking will be deleted</string>
+        <string name="unknown">"UNKNOWN: "</string>
+        <string name="rescan">Don\'t exit after scanning</string>
+        <string name="rescan_summary">This command eliminate the need to start the scanner after each scan</string>
+        <string name="discard_changes_confirmation">Do you want to discard changes?</string>
+        <string name="display_options">Display Options</string>
+        <string name="start_sync_data">Start sync data...</string>
+        <string name="sync">Sync</string>
+        <string name="confirmation_messages">Confirmation Messages</string>
+        <string name="products_count">"Products Count: "</string>
+        <string name="groups_count">"Groups Count: "</string>
+        <string name="exp1"> of stock-takes already saved. Thus, </string>
+        <string name="Sync_caution">Caution: Syncing may take long time depending on your internet speed and data size, so be patient.</string>
+        <string name="local_ip">Local IP</string>
+        <string name="static_ip">Static IP</string>
+        <string name="error_application_folder_not_exists">Error: Application folder not exists!</string>
+        <string name="default_exported_files_path">Default Exported Files Path</string>
+        <string name="app_folder" translatable="false">/storage/emulated/0/Al-ameen Stock-taking</string>
+        <string-array name="confirmation_messages_keys">
+            <item>Modify Stock-Taking Item</item>
+            <item>Export Stock-Taking</item>
+            <item>Delete Item Scan</item>
+            <item>Delete Item</item>
+            <item>Delete Stock-Taking</item>
+        </string-array>
+        <string-array name="confirmation_messages_values" ignore="MissingTranslation" translatable="false">
+            <item>0</item>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+        </string-array>
+        <string name="decimal_places_count">Number Of Decimal Places</string>
+        <string name="choose_product">Choose Product</string>
+        <string name="show_zero_value">Show Zero Value</string>
+        <string-array name="decimal_places_count_values" ignore="MissingTranslation" translatable="false">
+            <item>0</item>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+        </string-array>
+        <string name="title_activity_about" translatable="false">About</string>
+        <string name="exported">(Exported)</string>
+        <string name="use_bold_font_style">Use Bold Font Style</string>
+        <string name="about_desc">SyrianSoft Company was established in 1992. It started distributing Al-Ameen Accounting System commercially in 1994 and is constantly working on developing the program up till now.</string>
+        <string name="no_file">Not Exist Files</string>
+    <string name="setting">Setting</string>
+    <string name="import_file">Import Excel File (.XLS)</string>
+    <string name="on_file">No File Exist</string>
+            <string name="select_file">Select File</string>
+        <string name="problem">There  Problem in Scan</string>
+        <string name="close">غلق</string>
+        <string name="title_name">الريان</string>
+        <string name="select_sheet" >Select Sheet </string>
+    </resources>
