@@ -49,9 +49,7 @@
         <string name="total">الإجمالي</string>
         <string name="sum">المجموع</string>
         <string name="time">التوقيت</string>
-        <string name="unit1">وحدة أولى</string>
-        <string name="unit2">وحدة ثانية</string>
-        <string name="unit3">وحدة ثالثة</string>
+        <string name="unit">الوحدة</string>
         <string name="choose_action">اختر الاجراء</string>
         <string name="modify">تعديل</string>
         <string name="delete">حذف</string>
@@ -158,4 +156,12 @@
     <string name="close">غلق</string>
     <string name="title_name">الريان</string>
     <string name="select_sheet" > اختر الورقة</string>
+    <string name="no_sd_card">لا يوجد كارت ذاكرة في الجهاز</string>
+    <string name="product_name">أسم الصنف </string>
+    <string name="barcode">الباركود\الكود</string>
+    <string name="price"> السعر</string>
+    <string name="bonus">الأضافة</string>
+    <string name="discount">الخصم</string>
+    <string name="latin_name">الأسم اللاتينى</string>
+    <string name="add_feild">إضاقة حقل أخرى</string>
 </resources>

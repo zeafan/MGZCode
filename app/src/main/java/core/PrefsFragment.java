@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -21,16 +20,11 @@ import com.zeafan.mgzcode.R;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
-import jxl.read.biff.BiffException;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class PrefsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -61,15 +55,13 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
             }
         });
     }
-    private ArrayList<String> getFiles(File[] files) {
-        ArrayList<String> items = new ArrayList<>();
+    private void getFiles(File[] files, ArrayList<String> items) {
         try {
-
             for (File file : files) {
                 if (file.isDirectory()) {
-                    getFiles(file.listFiles());
+                    getFiles(file.listFiles(), items);
                 } else {
-                    if (file.getPath().endsWith(".xls")||file.getPath().endsWith(".xlsx")) {
+                    if (file.getPath().endsWith(".xls")) {
                         items.add(file.getPath());
                     }
                 }
@@ -77,31 +69,36 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
         } catch (Exception e) {
             GlobalClass.SendExceptionToFireBase(e);
         }
-        return items;
     }
     private void createListDialog(final Activity context) {
-            final ArrayList<String> items2 = getFiles(new File(Environment.getExternalStorageDirectory().getAbsolutePath()).listFiles());
-        if(items2.size()==0)
+        if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
+        {
+            Toast.makeText(context, R.string.no_sd_card, Toast.LENGTH_LONG).show();
+            return;
+        }
+        ArrayList<String> items = new ArrayList<>();
+         getFiles(new File(Environment.getExternalStorageDirectory().getAbsolutePath()).listFiles(),items);
+        if(items.size()==0)
         {
             Toast.makeText(context,R.string.on_file, Toast.LENGTH_SHORT).show();
             return;
         }
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(context);
         builderSingle.setTitle(R.string.select_file);
-        ArrayList<String> items=FilterFilesPathes(items2);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(context, android.R.layout.select_dialog_singlechoice, items);
+      ArrayList <String> FileNames = FilterFilesPathes(items);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(context, android.R.layout.select_dialog_singlechoice, FileNames);
         builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         });
-
+      final   ArrayList <String> Files = items;
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    InputStream in = new FileInputStream(items2.get(which));
+                    InputStream in = new FileInputStream(Files.get(which));
                     Workbook wb =Workbook.getWorkbook(in);
                     int size = wb.getSheets().length;
 
@@ -110,6 +107,10 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
                     }else {
                         Sheet s = wb.getSheet(0);
                         ArrayList<String> ColumesNames = GetColumesName(s);
+                        if(ColumesNames.size()>2)
+                        {
+                            ShowDialogToSelectLinks(ColumesNames,s);
+                        }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -119,9 +120,13 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
         builderSingle.show();
     }
 
+    private void ShowDialogToSelectLinks(ArrayList<String> columesNames, Sheet s) {
+
+
+    }
+
     private ArrayList<String> GetColumesName(Sheet s) {
         ArrayList<String> columesNames=new ArrayList<>();
-
         for (int i=0;i<=s.getColumns();i++)
         {
             columesNames.add(s.getCell(0,i).getContents());
@@ -146,6 +151,10 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
                 try {
                         Sheet s = wb.getSheet(which);
                         ArrayList<String> ColumesNames = GetColumesName(s);
+                    if(ColumesNames.size()>2)
+                    {
+                        ShowDialogToSelectLinks(ColumesNames,s);
+                    }
                     Toast.makeText(context, ColumesNames.get(0), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -153,6 +162,16 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
             }
         });
         builderSingle.show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode==READ_EXTERNAL_STORAGE_PERMISSION_CODE)
+        {
+            createListDialog(getActivity());
+        }
+
     }
 
     private ArrayList<String> FilterFilesPathes(ArrayList<String> items2) {

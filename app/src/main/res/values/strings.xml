@@ -48,9 +48,7 @@
         <string name="total">Total</string>
         <string name="sum">Sum</string>
         <string name="time">Time</string>
-        <string name="unit1">Unit1</string>
-        <string name="unit2">Unit2</string>
-        <string name="unit3">Unit3</string>
+        <string name="unit">Unit</string>
 
         <string name="choose_action">Choose action</string>
         <string name="modify">Modify</string>
@@ -190,4 +188,12 @@
         <string name="close">غلق</string>
         <string name="title_name">الريان</string>
         <string name="select_sheet" >Select Sheet </string>
+        <string name="no_sd_card">NO SD Card</string>
+        <string name="product_name">Product Name</string>
+        <string name="barcode">Product BarCode</string>
+        <string name="price" >Price</string>
+        <string name="bonus">Bonus</string>
+        <string name="discount">Discount</string>
+        <string name="latin_name">Product Latin Name</string>
+        <string name="add_feild">Add Another Field</string>
     </resources>
