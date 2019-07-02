@@ -158,10 +158,14 @@
     <string name="select_sheet" > اختر الورقة</string>
     <string name="no_sd_card">لا يوجد كارت ذاكرة في الجهاز</string>
     <string name="product_name">أسم الصنف </string>
-    <string name="barcode">الباركود\الكود</string>
+    <string name="barcode">الباركود/الكود</string>
     <string name="price"> السعر</string>
     <string name="bonus">الأضافة</string>
     <string name="discount">الخصم</string>
     <string name="latin_name">الأسم اللاتينى</string>
     <string name="add_feild">إضاقة حقل أخرى</string>
+    <string name="notes">ملحوظات</string>
+    <string name="select_column">أختر العمود</string>
+    <string name="relate_operation">عملية الربط</string>
+    <string name="info_relate">قم بربط أعمدة ملف الأكسل مع البيانات التى سوف ترتبط بها</string>
 </resources>

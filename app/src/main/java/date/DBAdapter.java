@@ -10,12 +10,10 @@ public class DBAdapter {
 
     private static final String CREATE_PRODUCT_TABLE_SCRIPT = "CREATE TABLE " + Product.DATABASE_TABLE + " (" +
             Product.KEY_NAME + " TEXT, " +
-            Product.KEY_LATIN_NAME + " TEXT, " +
             Product.KEY_BARCODE + " TEXT, " +
-            Product.KEY_UNITY + " TEXT, " +
-            Product.KEY_PRICE1 + " REAL, " +
-            Product.KEY_BONUS + " REAL, " +
-            Product.KEY_DISCOUNTS + " TEXT );";
+            Product.KEY_UNIT + " TEXT, " +
+            Product.KEY_PRICE + " REAL, " +
+            Product.KEY_Note + " Text );";
     public static SQLiteDatabase database;
     private static DatabaseHelper databaseHelper;
     final Context context;

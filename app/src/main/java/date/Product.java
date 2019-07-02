@@ -15,32 +15,26 @@ import java.util.UUID;
 public class Product implements Serializable {
     // Table Columns Names
     public static final String KEY_NAME = "Name";
-    public static final String KEY_LATIN_NAME = "LatinName";
     public static final String KEY_BARCODE = "Barcode";
-    public static final String KEY_UNITY = "Unit";
-    public static final String KEY_PRICE1 = "Price";
-    public static final String KEY_BONUS = "Bonus";
-    public static final String KEY_DISCOUNTS = "Discounts";
+    public static final String KEY_UNIT = "Unit";
+    public static final String KEY_PRICE = "Price";
+    public static final String KEY_Note = "Bonus";
     public static String DATABASE_TABLE = "DistDeviceMt000";
     public String Name;
-    public String LatinName;
     public String Barcode;
     public String Unit;
     public double Price;
-    public double Bonus;
-    public double Discount;
+    public  String Note;
 
     public Product() {
     }
 
-    public Product( String name, String latinName, String barcode, String unit, double price, double bonus, double discounts) {
+    public Product( String name, String barcode, String unit, double price, String note) {
         Name = name;
-        LatinName = latinName;
         Barcode = barcode;
         Unit = unit;
         Price = price;
-        Bonus = bonus;
-        Discount = discounts;
+        Note = note;
     }
 
     public static boolean SaveInDatabase(Context context, ArrayList<Product> products) {
@@ -50,24 +44,20 @@ public class Product implements Serializable {
             DBAdapter.database.beginTransaction();
             String sql = "INSERT INTO " + DATABASE_TABLE + " (" +
                     KEY_NAME + "," +
-                    KEY_LATIN_NAME + "," +
                     KEY_BARCODE + "," +
-                    KEY_UNITY + "," +
-                    KEY_PRICE1 + "," +
-                    KEY_BONUS + "," +
-                    KEY_DISCOUNTS +
-                    ") VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    KEY_UNIT + "," +
+                    KEY_PRICE + "," +
+                    KEY_Note +
+                    ") VALUES (?, ?, ?, ?, ?, ?)";
 
 
             SQLiteStatement stmt = DBAdapter.database.compileStatement(sql);
             for (int i = 0; i < products.size(); i++) {
                 stmt.bindString(1, products.get(i).Name);
-                stmt.bindString(2, products.get(i).LatinName);
-                stmt.bindString(3, products.get(i).Barcode);
-                stmt.bindString(4, products.get(i).Unit);
-                stmt.bindDouble(5, products.get(i).Price);
-                stmt.bindDouble(6, products.get(i).Bonus);
-                stmt.bindDouble(7, products.get(i).Discount);
+                stmt.bindString(2, products.get(i).Barcode);
+                stmt.bindString(3, products.get(i).Unit);
+                stmt.bindDouble(4, products.get(i).Price);
+                stmt.bindString(5, products.get(i).Note);
                 stmt.execute();
                 stmt.clearBindings();
             }
@@ -126,12 +116,10 @@ public class Product implements Serializable {
             if (cursor.moveToFirst()) {
                 product = new Product();
                 product.Name = cursor.getString(cursor.getColumnIndex(KEY_NAME));
-                product.LatinName = cursor.getString(cursor.getColumnIndex(KEY_LATIN_NAME));
                 product.Barcode = cursor.getString(cursor.getColumnIndex(KEY_BARCODE));
-                product.Unit = cursor.getString(cursor.getColumnIndex(KEY_UNITY));
-                product.Price = cursor.getDouble(cursor.getColumnIndex(KEY_PRICE1));
-                product.Bonus = cursor.getDouble(cursor.getColumnIndex(KEY_BONUS));
-                product.Discount = cursor.getDouble(cursor.getColumnIndex(KEY_DISCOUNTS));
+                product.Unit = cursor.getString(cursor.getColumnIndex(KEY_UNIT));
+                product.Price = cursor.getDouble(cursor.getColumnIndex(KEY_PRICE));
+                product.Note = cursor.getString(cursor.getColumnIndex(KEY_Note));
             }
             cursor.close();
         } catch (Exception e) {
@@ -152,12 +140,10 @@ public class Product implements Serializable {
             adapter.Open();
             ContentValues values = new ContentValues();
             values.put(KEY_NAME, product.Name);
-            values.put(KEY_LATIN_NAME, product.LatinName);
             values.put(KEY_BARCODE, product.Barcode);
-            values.put(KEY_UNITY, product.Unit);
-            values.put(KEY_PRICE1, product.Price);
-            values.put(KEY_BONUS, product.Bonus);
-            values.put(KEY_DISCOUNTS, product.Discount);
+            values.put(KEY_UNIT, product.Unit);
+            values.put(KEY_PRICE, product.Price);
+            values.put(KEY_Note, product.Note);
             result = (DBAdapter.database.update(DATABASE_TABLE, values, KEY_BARCODE + "=" + product.Barcode, null) > 0);
             return result;
         } catch (Exception e) {

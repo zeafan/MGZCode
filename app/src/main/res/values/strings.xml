@@ -49,7 +49,6 @@
         <string name="sum">Sum</string>
         <string name="time">Time</string>
         <string name="unit">Unit</string>
-
         <string name="choose_action">Choose action</string>
         <string name="modify">Modify</string>
         <string name="delete">Delete</string>
@@ -196,4 +195,8 @@
         <string name="discount">Discount</string>
         <string name="latin_name">Product Latin Name</string>
         <string name="add_feild">Add Another Field</string>
+        <string name="notes">Notes</string>
+        <string name="select_column">Select Column</string>
+        <string name="relate_operation">Linkage Operation </string>
+        <string name="info_relate">Link the columns with the data associated with them</string>
     </resources>

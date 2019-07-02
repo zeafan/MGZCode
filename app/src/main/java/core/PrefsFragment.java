@@ -13,7 +13,11 @@ import android.os.Environment;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zeafan.mgzcode.R;
@@ -121,7 +125,50 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
     }
 
     private void ShowDialogToSelectLinks(ArrayList<String> columesNames, Sheet s) {
+        View v = getActivity().getLayoutInflater().inflate(R.layout.dialog_links,null);
+        Spinner Sp_name =v.findViewById(R.id.Sp_product_name);
+        Spinner Sp_barCode =v.findViewById(R.id.Sp_product_barcode);
+        Spinner Sp_Unit =v.findViewById(R.id.Sp_product_unit);
+        Spinner Sp_note  =v.findViewById(R.id.Sp_product_Note);
+        Spinner Sp_Price =v.findViewById(R.id.Sp_price);
+        columesNames.add(0,getString(R.string.select_column));
+        ArrayList<String> copy_lst = new ArrayList<>();
+        copy_lst.addAll(columesNames);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,copy_lst);
+        Sp_name.setAdapter(adapter);
+        Sp_barCode.setAdapter(adapter);
+        Sp_note.setAdapter(adapter);
+        Sp_Price.setAdapter(adapter);
+        Sp_Unit.setAdapter(adapter);
+        AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+        Sp_name.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+        builder.setView(v).setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setTitle(R.string.relate_operation).setMessage(R.string.info_relate)
+                .show();
+
+    }
+
+    private void setAdapter(ArrayAdapter adapter, Spinner sp_name, Spinner sp_barCode, Spinner sp_note, Spinner sp_price, Spinner sp_unit) {
 
     }
 
@@ -155,7 +202,6 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
                     {
                         ShowDialogToSelectLinks(ColumesNames,s);
                     }
-                    Toast.makeText(context, ColumesNames.get(0), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
