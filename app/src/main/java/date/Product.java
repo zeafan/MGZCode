@@ -18,7 +18,7 @@ public class Product implements Serializable {
     public static final String KEY_BARCODE = "Barcode";
     public static final String KEY_UNIT = "Unit";
     public static final String KEY_PRICE = "Price";
-    public static final String KEY_Note = "Bonus";
+    public static final String KEY_Note = "Note";
     public static String DATABASE_TABLE = "DistDeviceMt000";
     public String Name;
     public String Barcode;
@@ -48,7 +48,7 @@ public class Product implements Serializable {
                     KEY_UNIT + "," +
                     KEY_PRICE + "," +
                     KEY_Note +
-                    ") VALUES (?, ?, ?, ?, ?, ?)";
+                    ") VALUES ( ?, ?, ?, ?, ?)";
 
 
             SQLiteStatement stmt = DBAdapter.database.compileStatement(sql);

@@ -199,4 +199,8 @@
         <string name="select_column">Select Column</string>
         <string name="relate_operation">Linkage Operation </string>
         <string name="info_relate">Link the columns with the data associated with them</string>
+        <string name="error_save">There Error in Save Product in DataBase</string>
+        <string name="done">Done</string>
+        <string name="confirm_save" >Yes: If you want to recover the material with  all previous items \n No: If you want to recover items with Delete all items</string>
+        <string name="load_data" >Load Items </string>
     </resources>

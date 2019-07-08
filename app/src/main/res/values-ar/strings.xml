@@ -168,4 +168,8 @@
     <string name="select_column">أختر العمود</string>
     <string name="relate_operation">عملية الربط</string>
     <string name="info_relate">قم بربط أعمدة ملف الأكسل مع البيانات التى سوف ترتبط بها</string>
+    <string name="error_save">حدث خطأ أثناء عملية حفظ المواد راجع صحة البيانات وأعاد المحاولة </string>
+    <string name="done">تم حفظ البيانات بنجاح</string>
+    <string name="confirm_save">نعم :أذا كنت تريد أستعادة المواد بجانب كافة المواد المخزمه مسبقا  /n لا: أذا كنت تريد أستعادة المواد مع حذف كافة المواد المخزمه مسبقاً /n إغلاق : لأقفال الواجه وعدم الأختيار  </string>
+    <string name="load_data" > تحميل البيانات</string>
 </resources>
