@@ -1,5 +1,6 @@
 package date;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -53,13 +54,18 @@ public class Product implements Serializable {
 
             SQLiteStatement stmt = DBAdapter.database.compileStatement(sql);
             for (int i = 0; i < products.size(); i++) {
-                stmt.bindString(1, products.get(i).Name);
-                stmt.bindString(2, products.get(i).Barcode);
-                stmt.bindString(3, products.get(i).Unit);
-                stmt.bindDouble(4, products.get(i).Price);
-                stmt.bindString(5, products.get(i).Note);
-                stmt.execute();
-                stmt.clearBindings();
+                try {
+                    stmt.bindString(1, products.get(i).Name);
+                    stmt.bindString(2, products.get(i).Barcode);
+                    stmt.bindString(3, products.get(i).Unit);
+                    stmt.bindDouble(4, products.get(i).Price);
+                    stmt.bindString(5, products.get(i).Note);
+                    stmt.execute();
+                    stmt.clearBindings();
+                }catch (Exception ex)
+                {
+
+                }
             }
             DBAdapter.database.setTransactionSuccessful();
             return true;
@@ -152,5 +158,28 @@ public class Product implements Serializable {
         } finally {
             adapter.Close();
         }
+    }
+
+    public static void DeleteAll2(Context context, ArrayList<Product> products) {
+        StringBuilder AllBarCode = GetAllBarcode(products);
+            DBAdapter adapter = new DBAdapter(context);
+            try {
+                String query = "DELETE  FROM " + DATABASE_TABLE+ " WHERE "+KEY_BARCODE+" IN ("+AllBarCode+")";
+                adapter.Open();
+                DBAdapter.database.execSQL(query);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                adapter.Close();
+            }
+    }
+
+    private static StringBuilder GetAllBarcode(ArrayList<Product> products) {
+   StringBuilder values = new StringBuilder();
+    for(Product p :products)
+    {
+        values.append(p.Barcode).append(",");
+    }
+    return values.deleteCharAt(values.length()-1);
     }
 }

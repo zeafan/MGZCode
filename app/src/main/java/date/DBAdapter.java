@@ -9,11 +9,14 @@ public class DBAdapter {
     private static final int DATABASE_VERSION = 1;
 
     private static final String CREATE_PRODUCT_TABLE_SCRIPT = "CREATE TABLE " + Product.DATABASE_TABLE + " (" +
-            Product.KEY_NAME + " TEXT, " +
-            Product.KEY_BARCODE + " TEXT, " +
+            Product.KEY_NAME + " TEXT , " +
+            Product.KEY_BARCODE + " TEXT PRIMARY KEY, " +
             Product.KEY_UNIT + " TEXT, " +
             Product.KEY_PRICE + " REAL, " +
             Product.KEY_Note + " Text );";
+
+    private static final String CREATE_Index_SCRIPT =  "CREATE UNIQUE INDEX idx_DistDeviceMt000_Barcode ON "+ Product.DATABASE_TABLE+" ("+Product.KEY_BARCODE +")";
+
     public static SQLiteDatabase database;
     private static DatabaseHelper databaseHelper;
     final Context context;
@@ -54,6 +57,7 @@ public class DBAdapter {
         public void onCreate(SQLiteDatabase db) {
             try {
                 db.execSQL(CREATE_PRODUCT_TABLE_SCRIPT);
+                db.execSQL(CREATE_Index_SCRIPT);
             } catch (Exception e) {
                 e.printStackTrace();
             }

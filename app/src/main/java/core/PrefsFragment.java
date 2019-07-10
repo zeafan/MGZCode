@@ -264,6 +264,7 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
         al.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Product.DeleteAll2(getActivity(), products);
                 if (Product.SaveInDatabase(getActivity(), products)) {
                     Toast.makeText(getActivity(), R.string.done, Toast.LENGTH_SHORT).show();
                 } else {

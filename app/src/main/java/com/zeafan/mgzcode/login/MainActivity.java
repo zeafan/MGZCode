@@ -20,6 +20,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import com.zeafan.mgzcode.R;
 import java.io.IOException;
 
 import core.GlobalClass;
+import date.Product;
 import ru.katso.livebutton.LiveButton;
 import setting.SettingsActivity;
 
@@ -40,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
     SurfaceView surfaceView;
     CameraSource cameraSource;
     LiveButton BtnScan;
+    LinearLayout linear;
     ImageView imClose;
     ImageView imSetting;
+    TextView price,name,unit,note;
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
     private int ScanID = 1001;
     @Override
@@ -79,12 +83,18 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         BtnScan = findViewById(R.id.Scan);
         BtnScan = findViewById(R.id.Scan);
+        name =findViewById(R.id.name);
+        price =findViewById(R.id.price);
+        note =findViewById(R.id.note);
+        unit =findViewById(R.id.unit);
         BtnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 scan(ScanID);
             }
         });
+        linear=findViewById(R.id.linear);
+        linear.setVisibility(View.GONE);
     }
     public void scan(int ResultKey) {
         try {
@@ -101,7 +111,20 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == ScanID && resultCode == MainActivity.RESULT_OK) {
             String contents = intent.getStringExtra("SCAN_RESULT");
-            Toast.makeText(this, ""+contents, Toast.LENGTH_SHORT).show();
+            Product selectedProduct = Product.GetByBarcode(MainActivity.this,contents);
+            if(selectedProduct!=null){
+                setValues(selectedProduct);
+            }
         }
+    }
+
+    private void setValues(Product selectedProduct) {
+        linear.setVisibility(View.VISIBLE);
+        name.setText(selectedProduct.Name);
+        note.setVisibility(selectedProduct.Note.isEmpty()?View.GONE:View.VISIBLE);
+        unit.setVisibility(selectedProduct.Unit.isEmpty()?View.GONE:View.VISIBLE);
+        note.setText(getString(R.string.notes) +": "+ selectedProduct.Note);
+        unit.setText(getString(R.string.unit) +": "+selectedProduct.Unit);
+        price.setText(String.valueOf(selectedProduct.Price));
     }
 }
