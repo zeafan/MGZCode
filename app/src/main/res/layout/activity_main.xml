@@ -73,7 +73,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="@dimen/d_90_100_120"
         android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        android:background="@drawable/add" />
 
     <ru.katso.livebutton.LiveButton xmlns:livebutton="http://schemas.android.com/apk/res-auto"
         android:id="@+id/Scan"
