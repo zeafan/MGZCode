@@ -18,16 +18,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.zeafan.mgzcode.R;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-
 import date.Product;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -435,7 +431,12 @@ public class PrefsFragment extends PreferenceFragment implements SharedPreferenc
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String key) {
         try {
             switch (key) {
-                case "scan_method": {
+                case "password": {
+                    GlobalClass.Password = sharedPreferences.getString(key, "");
+                    break;
+                }
+                case "currency": {
+                    GlobalClass.CurrenyName = sharedPreferences.getString(key, "");
                     break;
                 }
             }

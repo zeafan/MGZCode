@@ -172,4 +172,11 @@
     <string name="done">تم حفظ البيانات بنجاح</string>
     <string name="confirm_save">نعم :أذا كنت تريد أستعادة المواد بجانب كافة المواد المخزمه مسبقا مع تعديل المواد الموجوده مسبقا /n لا: أذا كنت تريد أستعادة المواد مع حذف كافة المواد المخزمه مسبقاً /n إغلاق : لأقفال الواجه وعدم الأختيار  </string>
     <string name="load_data" > تحميل البيانات</string>
+    <string name="password">أدخل كلمة السر</string>
+    <string name="currency">أدخل العملة</string>
+    <string name="password_details">كلمة السر التى تفوم بيها بتعديلات على المواد</string>
+    <string name="currency_details">أدخل العملة التى سوف تظهر مع سعر المواد</string>
+    <string name="update">التعديل</string>
+    <string name="error_password">الباسورد غير صحيح</string>
+    <string name="no_product">لا يوجد مادة لهذا الباركود</string>
 </resources>

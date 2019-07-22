@@ -1,10 +1,13 @@
 package core;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
+import android.preference.PreferenceManager;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -12,10 +15,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 public class GlobalClass {
+    public static String CurrenyName="";
+    public static String Password = "";
     public static final String DATE_FORMAT = "dd-MM-yyyy";
+    public static android.content.SharedPreferences SharedPreferences;
     public static final String BarcodeScannerApkFileName = Environment.getExternalStorageDirectory().getPath() + File.separator + "barcode_scanner.apk";
 
-
+    public static void UpdateSetting(Context context) {
+        GlobalClass.SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+         Password = GlobalClass.SharedPreferences.getString("password", "");
+        CurrenyName = GlobalClass.SharedPreferences.getString("currency", "");
+    }
     public static String getVersionName(Context context) {
         String versionName = "N/A";
 

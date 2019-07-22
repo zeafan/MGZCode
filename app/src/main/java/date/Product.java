@@ -5,6 +5,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
+
+import com.zeafan.mgzcode.login.MainActivity;
+
 import org.json.JSONArray;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -181,5 +184,41 @@ public class Product implements Serializable {
         values.append(p.Barcode).append(",");
     }
     return values.deleteCharAt(values.length()-1);
+    }
+
+    public static boolean UpdateValue(MainActivity context, String value, MainActivity.EditType type, String Barcode) {
+        boolean result ;
+        DBAdapter adapter = new DBAdapter(context);
+        try {
+            adapter.Open();
+            ContentValues values = new ContentValues();
+            setValue(values,value,type);
+            result = (DBAdapter.database.update(DATABASE_TABLE, values, KEY_BARCODE + "=" + Barcode, null) > 0);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            adapter.Close();
+        }
+    }
+
+    private static void setValue(ContentValues values, String value, MainActivity.EditType type) {
+        switch (type)
+        {
+            case name:
+                values.put(KEY_NAME,value);
+                break;
+            case note:
+                values.put(KEY_Note,value);
+                break;
+            case unit:
+                values.put(KEY_UNIT,value);
+                break;
+            case price:
+                values.put(KEY_PRICE,value);
+                break;
+        }
+
     }
 }

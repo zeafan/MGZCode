@@ -10,14 +10,16 @@
     <item android:id="@+id/Setting"
         android:icon="@drawable/ic_settings_blue_300_24dp"
         android:title="@string/setting"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="2"
+        app:showAsAction="always"
         />
     <item android:id="@+id/cart"
         android:icon="@drawable/cart"
         android:title="@string/close"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="1"
+        app:showAsAction="always"
         />
-
+    <item android:id="@+id/edit"
+        android:icon="@drawable/edit"
+        android:title="@string/close"
+        app:showAsAction="always"
+        />
 </menu>

@@ -203,4 +203,11 @@
         <string name="done">Done</string>
         <string name="confirm_save" >Yes: If you want to recover the material with  all previous items \n No: If you want to recover items with Delete all items</string>
         <string name="load_data" >Load Items </string>
+        <string name="password">Enter Password</string>
+        <string name="currency">Entry Currency</string>
+        <string name="password_details">Entry Password to allow modify Products</string>
+        <string name="currency_details">Entry Currency to display with price</string>
+        <string name="update">Update</string>
+        <string name="error_password">Password Not Correct</string>
+        <string name="no_product">NO Product For this Barcode</string>
     </resources>
